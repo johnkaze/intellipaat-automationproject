@@ -1,0 +1,34 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Suite">
+
+    <parameter name="uName" value="demo"></parameter>
+
+    <parameter name="psswd" value="demo"></parameter>
+
+    <test name="RegressionTest1">
+
+        <classes>
+
+            <class name="Seleniumpackage.testngDemo.TestNGDemoThree">
+                <methods>
+                    <exclude name="sentItems"></exclude>
+                </methods>
+            </class>
+
+        </classes>
+
+    </test>
+
+   <!--  <test name="RegressionTest2">
+
+         <classes>
+
+             <class name="Seleniumpackage.testngDemo.TestNGDemoFour"/>
+
+         </classes>
+
+     </test>-->
+
+</suite>
+

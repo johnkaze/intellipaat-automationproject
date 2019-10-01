@@ -1,0 +1,227 @@
+Selenium Class Notes ::
+
+open source ::
+
+Components of selenium ::
+
+1. Selenium ide ::
+2. Selenium remote control (RC) ::
+3. Selenium webdriver ::
+
+selenium jar file
+
+Launch browser ::
+
+WebDriver :: Interface
+
+WebDriver is implemented by
+1. ChromeDriver()
+2. FirefoxDriver()
+3. InternetExplorerDriver()
+
+
+System.setProperty("webdriver.chrome.driver","E:\Softwares\SeleniumSoftwares\Drivers\chromedriver.exe");
+WebDriver driver = new ChromeDriver();
+
+
+System.setProperty("webdriver.gecko.driver","E:\Softwares\SeleniumSoftwares\Drivers\geckodriver.exe");
+WebDriver driver = new FirefoxDriver();
+
+
+System.setProperty("webdriver.ie.driver","E:\Softwares\SeleniumSoftwares\Drivers\IEDriverServer.exe");
+WebDriver driver = new InternetExplorerDriver();
+
+
+Launch Application ::
+
+get(String url) ::
+
+driver.get("https://www.facebook.com/")
+
+driver.getTitle();
+
+Navigation Commands ::
+
+driver.navigate().to("https://www.facebook.com/");
+
+driver.navigate().back();
+
+driver.navigate().forward();
+
+driver.navigate().refresh();
+
+DOM :: Document Object Model
+
+inspect web element ::
+
+Locators ::
+
+id, name, class, tagname, linktext, partiallinktext, xpath, cssselector
+
+Types of xpath ::
+
+1. Absolute xpath :: /html/body/div/table/tbody/tr/td[2]/table/tbody/tr/td[2]/table/tbody/tr[2]/td[3]/form/table/tbody/tr[4]/td/table/tbody/tr[2]/td[2]/input
+2. Relative xpath :: //
+
+
+/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[2]/td[3]/form/table/tbody/tr[4]/td/table/tbody/tr[2]/td[2]/input
+
+
+Syntax ::
+
+//tagname[@locator='valueoflocator']
+
+//input[@name='userName']
+
+visible text ::
+text() ::
+a :: anchor tag
+
+//tagname[text()='visibletext']
+
+//tagname[contains(text(), 'partofvisibletext')]
+
+
+//a[text()='Forgotten account?']
+
+//a[contains(text(), 'gotten acc')]
+
+
+following ::
+
+//input[@id='pass']/following::tagname[1]
+
+
+preceding ::
+
+//tagname[@id='pass']/preceding::tagname[1]
+
+
+starts-with ::
+
+//tagnmae[starts-with(@locator, 'starting string')]
+
+//input[starts-with(@name, 'first')]
+
+or &&&& and ::
+
+//input[@id='email' and @name='email']
+
+//input[@id='email' or @name='email']
+
+
+CSS Selector ::
+
+
+id ::
+
+tagname#valueofidlocator :: input#email
+
+#valueofidlocator :: #email
+
+class ::
+
+tagname.valueofclasslocator :: input.inputtext
+
+.valueofclasslocator :: .inputtext
+
+
+class && id ::
+
+tagname#id.class :: input#email.inputtext
+
+tagname.class#id  ::  input.inputtext#email
+
+name ::
+
+tagname[locator='valueoflocator']  ::  input[name='email'][type='email']
+
+[locator='valueoflocator']  ::  [name='email'][type='email']
+
+
+Starts with :: ^
+
+tagname[locator^='valueoflocator'] :: input[name^='first']
+
+ends with :: $
+
+tagname[locator$='valueoflocator'] :: input[name$='Name']
+
+
+Contains :: *
+
+tagname[locator*='partofvalueoflocator'] :: input[name*='Name']
+
+
+parent to child :: >
+
+table > tbody > tr > td > input
+
+
+Locating WebElements
+ a. findElement method :: NoSuchElementException :: WebElement
+ b. findElements method :: List<WebElement> list :: 0
+
+Web Element Commands ::
+
+click() ::
+
+sendKeys() ::
+
+clear() ::
+
+Waits In Selenium ::
+
+1. implicitly wait ::
+2. WebDriver wait or explicitly wait ::
+3. fluent wait ::
+
+
+Scrolling ::
+
+Dropdown ::
+
+Select
+
+selectByValue(String value);
+
+selectByIndex(int index);
+
+selectByVisibleText(String text);
+
+Links ::
+
+tagname :: anchor tag :: a
+
+Radio buttons and check boxes ::
+
+Handling Alerts ::
+
+1. Simple alert :: Only ok button and display message
+2. Prompt Alert :: accept some text message and having OK and Cancel buttons
+3. Confirmation Alert ::having OK and Cancel buttons and display message
+
+
+Handling Frames ::
+
+iframe
+
+Handling Multiple Browser Windowss ::
+
+getWindowHandle(); String;
+
+getWindowHandles(); Set<>
+
+Handling Web Tables ::
+
+
+
+
+
+
+
+
+
+
+
+
